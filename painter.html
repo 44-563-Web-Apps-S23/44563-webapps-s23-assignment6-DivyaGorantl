@@ -54,6 +54,23 @@ function checkPainter(){
             } 
         out.innerHTML = "correct: " + good + " " + "wrong: " + oops
         }
+function selectimage(){
+     switch (useimage){
+        case 1: useimage=useimage+1
+        image.src="Ginkgo.jpg";
+        break;
+        case 2: useimage=useimage+1
+        image.src="Neem.jpg";
+        break;
+        case 3: useimage=useimage+1
+        image.src="oka.jpg";
+        break;
+    }
+}
+    function giveAlert(){
+    alert("Sorry, ran out of guesses.");
+
+}
 </script>
 
 </body>
