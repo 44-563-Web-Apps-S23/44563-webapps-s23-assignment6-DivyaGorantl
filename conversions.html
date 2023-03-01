@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <title>Conversions</title>
+<body>
+
+<h2>Divyya Sai Gorantla shows currency conversions</h2>
+<form>
+    <label for="base">Enter base amount </label>
+    <input type ="number" id="base" name="base" min=10 max=50 step=2 value=50> <br>
+
+    <label for="conv">Enter the conversion rate</label>
+    <input type ="number" id="conv" name="conv" value=35> <br>
+
+    <input type="button" onclick="convert()" value="Show conversions">
+</form>
+
+<p id="result">This text will be replaced </p>
+<form>
+    <input type="radio" id="average" name="calculations" onclick="chooseOp()" value="mean"  checked >
+    <label for="average">average</label>
+    <br>
+    <input type="radio" id="max" name="calculations" onclick="chooseOp()" value="maximum">
+    <label for="max">max</label>
+    <br>
+    <input type="radio" id="min" name="calculations" onclick="chooseOp()" value="minimum">
+    <label for="min">min</label>
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function convert(){
+    base = document.getElementById("base").value
+    ele = document.getElementById("conv").value
+    toShow=''    
+    out = document.getElementById("result")
+    for(let i=0;i<5;i++){     
+        let conversion=base*ele;
+        toShow=toShow+" "+ base +" is "+ conversion+";";
+        base=base*2
+    }
+    document.getElementById("result").innerHTML = "Conversions are:" + toShow;
+}
+function chooseOp(){
+   let ans=0;
+    let base = document.getElementById("base").value;
+    let ele = document.getElementById("conv").value;
+    let average = document.getElementById("average").checked;
+    let max = document.getElementById("max").checked;
+    let min = document.getElementById("min").checked;
+    if (average) {
+        ans = (parseInt(base)+parseInt(ele))/2;
+    }
+    else if (max) {
+        ans = Math.max(base,ele);
+    }
+    else if(min){
+        ans = Math.min(base,ele);
+    }
+    document.getElementById("result1").innerHTML = ans
+    }
+</script>
+
+</body>
+</html> 

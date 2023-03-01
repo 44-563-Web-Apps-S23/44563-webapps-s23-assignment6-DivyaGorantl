@@ -29,10 +29,14 @@
 
     <input type="button" class="btn btn-primary" onclick="checkPainter()" value="Check the painter name">
 </form>
-
-
 <p id="result">This text will be replaced </p>
 
+<br>
+<div class="container">
+    <img src="Ginkgo.jpg" id="img" alt="Ginkgo plant" height="100px" width="100px" onclick="selectImage()">
+</div>
+
+       <p id="result">Result </p>
 <script> 
 
 let good=0;
@@ -54,17 +58,22 @@ function checkPainter(){
             } 
         out.innerHTML = "correct: " + good + " " + "wrong: " + oops
         }
-function selectimage(){
-     switch (useimage){
-        case 1: useimage=useimage+1
-        image.src="Ginkgo.jpg";
-        break;
-        case 2: useimage=useimage+1
-        image.src="Neem.jpg";
-        break;
-        case 3: useimage=useimage+1
-        image.src="oka.jpg";
-        break;
+
+
+function selectImage(){
+    switch (useImage){
+        case 1:
+            useImage=useImage+1
+            img.src="Ginkgo.jpg";
+            break;
+        case 2:
+            useImage=useImage+1
+            img.src="oka.jpg";
+            break;
+        case 3:
+            useImage=useImage+1
+            img.src="Neem.jpg";
+            break;
     }
 }
     function giveAlert(){
